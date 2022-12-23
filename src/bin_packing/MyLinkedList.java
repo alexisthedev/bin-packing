@@ -108,20 +108,22 @@ public class MyLinkedList<T>{
 		return size;
 	}
 
+	public void overrideSize(int size) {
+		this.size = size;
+	}
+
 	public boolean isEmpty() {
 		return size() == 0;
 	}
 
 	@Override
 	public String toString() {
-		if (isEmpty()) return "LinkedList: empty";
 		LinkedListNode<T> curr = head;
-		StringBuilder res = new StringBuilder("LinkedList: ");
+		StringBuilder res = new StringBuilder();
 		while (curr != null) {
-			res.append(curr.data().toString() + " -> ");
+			res.append(curr.data().toString() + " ");
 			curr = curr.next();
 		}
-		res.append("NULL");
-		return res.toString();
+		return res.toString().trim();
 	}
 }
