@@ -11,8 +11,7 @@ public class Greedy {
 			if (prioq.isEmpty() || f > prioq.peek().getAvailableMemory()) {
 				prioq.insert(new Disk(f));
 			} else if (f <= prioq.peek().getAvailableMemory()) {
-				prioq.peek().insertFolder(f);
-				prioq.update();
+				prioq.insertAtPeek(f);
 			}
 		}
 
