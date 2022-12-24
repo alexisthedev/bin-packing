@@ -27,7 +27,11 @@ public class MaxPQ {
 		return heap.deleteMax();
 	}
 
-	public void update() {
+	public void insertAtPeek(int v) {
+		/*
+		 * Inserts new folder at the disk with the maximum available space and restores order
+		 */
+		heap.peek().insertFolder(v);
 		heap.heapifyDown();
 	}
 
